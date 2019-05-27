@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+	app:startDestination="@id/screenOne">
+	
+	<fragment
+		android:id="@+id/screenOne"
+		android:name="com.example.navigationcomponentdemo.view.ScreenOne"
+		android:label="ScreenOne" >
+		<action
+			android:id="@+id/action_screenOne_to_screenTwo"
+			app:destination="@id/screenTwo" />
+	</fragment>
+	<fragment
+		android:id="@+id/screenTwo"
+		android:name="com.example.navigationcomponentdemo.view.ScreenTwo"
+		android:label="ScreenTwo" >
+		<action
+			android:id="@+id/action_screenTwo_to_screenThree"
+			app:destination="@id/screenThree" />
+		<action
+			android:id="@+id/action_screenTwo_to_screenThree2"
+			app:destination="@id/screenThree" />
+	</fragment>
+	<fragment
+		android:id="@+id/screenThree"
+		android:name="com.example.navigationcomponentdemo.view.ScreenThree"
+		android:label="ScreenThree" >
+		<action
+			android:id="@+id/action_screenThree_to_screenOne"
+			app:destination="@id/screenOne"
+			app:popUpTo="@+id/screenOne"
+			app:popUpToInclusive="true" />
+	</fragment>
+</navigation>
